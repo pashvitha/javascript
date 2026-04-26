@@ -1,0 +1,74 @@
+1) What is JavaScript, and what is its primary use?
+JavaScript is a high-level, interpreted programming language used mainly to make web pages interactive and dynamic.
+
+What it is
+
+JavaScript is one of the core technologies of the web (along with HTML and CSS). It runs directly in the browser and can also run on servers using environments like Node.js.
+
+Primary Use
+
+Its main purpose is to add behavior and interactivity to websites.
+
+2) What are the basic data types in JavaScript?
+Primitive Data Types (built-in basics)
+
+Number
+Represents both integers and decimals.
+
+let age = 20;
+let price = 99.99;
+
+String
+Represents text (characters inside quotes).
+
+let name = "Pashvitha";
+
+Boolean
+Represents logical values: true or false.
+
+let isLoggedIn = true;
+
+Undefined
+A variable declared but not assigned a value.
+
+let x;
+
+Null
+Represents an intentional empty value.
+
+let data = null;
+
+BigInt
+Used for very large integers beyond normal Number limits.
+
+let big = 12345678901234567890n;
+
+Symbol
+Used to create unique identifiers (mostly for advanced use).
+
+let id = Symbol("id");
+
+3) How do you declare a variable in JavaScript?
+Basic Syntax
+keyword variableName = value;
+a) Using let 
+let age = 20;
+Value can be changed later
+b)  Using const (constant value)
+const pi = 3.14;
+Value cannot be reassigned
+c) Using var 
+var name = "Pashvitha";
+
+4) What is the difference between null and undefined in JavaScript?
+
+a) undefined
+Means a variable is declared but not assigned
+Automatically assigned by JavaScript
+let x;
+console.log(x); // undefined
+
+b) null
+Means intentional empty value
+Assigned by the programmer
+let y = null;
