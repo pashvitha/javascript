@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Info App</title>
+</head>
+<body>
+
+<script>
+// Global variable (global scope)
+let appName = "User Information App";
+
+// Taking user input (string, number)
+let userName = prompt("Enter your name:");
+let age = Number(prompt("Enter your age:")); // number type
+let email = prompt("Enter your email:");
+let isStudent = confirm("Are you a student?"); // boolean
+
+// Function to demonstrate local scope
+function calculateAgeInDays(userAge) {
+  let days = userAge * 365; // local variable
+  return days;
+}
+
+// Calling function
+let ageInDays = calculateAgeInDays(age);
+
+//  Display result
+alert(
+  "App: " + appName + "\n" +
+  "Name: " + userName + "\n" +
+  "Email: " + email + "\n" +
+  "Student: " + isStudent + "\n" +
+  "Age in Days: " + ageInDays
+);
+
+//  Changing background color (extra)
+let color = prompt("Enter a background color:");
+document.body.style.backgroundColor = color;
+
+</script>
+
+</body>
+</html>
