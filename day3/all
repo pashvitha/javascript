@@ -1,0 +1,64 @@
+let a=10;
+let b="10";
+
+console.log("a=",a, "|b=",b);
+console.log("a==b: ",a==b);
+console.log("a===b:",a===b);
+console.log("a!=b:",a!=b);
+console.log("a!==b:",a!==b);
+console.log("a>b:",a>b);
+console.log("a<b:",a<b);
+console.log("a>=b:",a>=b);
+console.log("a<=b:",a<=b);
+
+//------------------------------------ 
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+let num = Number(prompt("Enter a number:"));
+let res = (num % 2 === 0) ? "even" : "odd";
+console.log("Number:", num);
+console.log("Result:", res);
+
+let age = Number(prompt("Enter age:"));
+let status = (age >= 18) ? "adult" : "minor";
+console.log("Age:", age);
+console.log("Status:", status);
+</script>
+
+</body>
+</html> 
+
+//------------------------------------------------------ 
+let score = 82;
+let grade=(score>=90)?'A':
+            (score>=75)?'B':
+            (score >= 60) ? "C" :
+            (score >= 45) ? "D" : "F";
+
+console.log("Score:", score);
+console.log("Grade:", grade);
+
+//----------------------------------------------------- 
+
+let temperature = 25;
+
+let result = (temperature > 30) ? "Hot" :
+             (temperature >= 20) ? "Warm" :
+             (temperature >= 10) ? "Cool" : "Cold";
+
+console.log("Temperature:", temperature);
+console.log("Category:", result);
+
+//---------------------------------------------------
+let age = 25;
+
+let group = (age <= 12) ? "Child" :
+            (age <= 19) ? "Teen" :
+            (age <= 64) ? "Adult" : "Senior";
+
+console.log("Age:", age);
+console.log("Group:", group);
