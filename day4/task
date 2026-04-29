@@ -1,4 +1,6 @@
-// ---------------- 1. Online Library Membership ----------------
+// ================== 1. Online Library Membership ==================
+console.log("----- Library Membership -----");
+
 let membership1 = prompt("Enter membership type (Basic / Standard / Premium):");
 
 if (membership1 === "Basic") {
@@ -8,14 +10,16 @@ else if (membership1 === "Standard") {
     console.log("Access: Free + discounted paid books.");
 } 
 else if (membership1 === "Premium") {
-    console.log("Access: All books + exclusive content.");
+    console.log("Access: All books including exclusive content.");
 } 
 else {
     console.log("Invalid membership type.");
 }
 
 
-// ---------------- 2. E-Commerce Discount ----------------
+// ================== 2. E-Commerce Discount ==================
+console.log("----- E-Commerce Discount -----");
+
 let membership2 = prompt("Enter membership (Regular / VIP):").toLowerCase();
 let amount = Number(prompt("Enter purchase amount:"));
 
@@ -41,17 +45,21 @@ else {
 
     let finalPrice = amount - (amount * discount / 100);
 
+    console.log("Original Amount:", amount);
+    console.log("Discount:", discount + "%");
     console.log("Final Price:", finalPrice);
 }
 
 
-// ---------------- 3. Scholarship ----------------
+// ================== 3. Scholarship Eligibility ==================
+console.log("----- Scholarship Eligibility -----");
+
 let gpa = Number(prompt("Enter GPA:"));
 let activities = Number(prompt("Enter activities:"));
 let serviceHours = Number(prompt("Enter service hours:"));
 
 if (gpa < 0 || gpa > 4 || isNaN(gpa)) {
-    console.log("Invalid input");
+    console.log("Invalid input.");
 } 
 else {
     let found = false;
@@ -77,7 +85,9 @@ else {
 }
 
 
-// ---------------- 4. Movie Ticket ----------------
+// ================== 4. Movie Ticket Pricing ==================
+console.log("----- Movie Ticket Pricing -----");
+
 let day = prompt("Enter day (weekday / weekend):").toLowerCase();
 let age1 = Number(prompt("Enter age:"));
 
@@ -98,7 +108,9 @@ else {
 }
 
 
-// ---------------- 5. Event Registration ----------------
+// ================== 5. Event Registration ==================
+console.log("----- Event Registration -----");
+
 let age2 = Number(prompt("Enter age:"));
 let participants = Number(prompt("Enter participants:"));
 let email = prompt("Enter email:");
@@ -106,14 +118,14 @@ let email = prompt("Enter email:");
 let validEmail = email.includes("@") && email.includes(".");
 
 if (age2 < 18) {
-    console.log("Must be 18+");
+    console.log("Registration failed: Must be 18+");
 } 
 else if (participants >= 100) {
-    console.log("Event full");
+    console.log("Registration failed: Event full");
 } 
 else if (!validEmail) {
-    console.log("Invalid email");
+    console.log("Registration failed: Invalid email");
 } 
 else {
-    console.log("Registration successful");
+    console.log("Registration successful!");
 }
