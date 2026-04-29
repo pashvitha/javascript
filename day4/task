@@ -1,150 +1,119 @@
-let membership = prompt("Enter membership type (Basic / Standard / Premium):");
+// ---------------- 1. Online Library Membership ----------------
+let membership1 = prompt("Enter membership type (Basic / Standard / Premium):");
 
-if (membership === "Basic") {
-    console.log("You have access to free books only.");
+if (membership1 === "Basic") {
+    console.log("Access: Free books only.");
 } 
-else if (membership === "Standard") {
-    console.log("You have access to free books and discounted paid books.");
+else if (membership1 === "Standard") {
+    console.log("Access: Free + discounted paid books.");
 } 
-else if (membership === "Premium") {
-    console.log("You have access to all books including exclusive content.");
+else if (membership1 === "Premium") {
+    console.log("Access: All books + exclusive content.");
 } 
 else {
-    console.log("Invalid membership type. Please enter Basic, Standard, or Premium.");
+    console.log("Invalid membership type.");
 }
 
 
-//-------------------------- 
-
-let membership = prompt("Enter membership (Regular / VIP):").toLowerCase();
+// ---------------- 2. E-Commerce Discount ----------------
+let membership2 = prompt("Enter membership (Regular / VIP):").toLowerCase();
 let amount = Number(prompt("Enter purchase amount:"));
 
-// Validation
 if (amount < 0 || isNaN(amount)) {
     console.log("Invalid purchase amount.");
 } 
-else if (membership !== "regular" && membership !== "vip") {
+else if (membership2 !== "regular" && membership2 !== "vip") {
     console.log("Invalid membership type.");
 } 
+else {
+    let discount = 0;
 
-else{
-    let discount=0;
-    if(membership==='regular'){
-        if(amount<100 ) discount=0;
-        else if(amount<=500) discount=5;
-        else discount=10;
+    if (membership2 === "regular") {
+        if (amount < 100) discount = 0;
+        else if (amount <= 500) discount = 5;
+        else discount = 10;
     } 
+    else {
+        if (amount < 100) discount = 10;
+        else if (amount <= 500) discount = 15;
+        else discount = 20;
+    }
 
-    else if(membership==='vip'){
-        if(amount<100) discount=10; 
-        else if(amount<=500) discount=15;
-        else discount=20;
+    let finalPrice = amount - (amount * discount / 100);
 
-    } 
-
-    let finalprice=amount-(amount*discount/100);
-    console.log("Membership:", membership);
-    console.log("Original Amount:", amount);
-    console.log("Discount:", discount + "%");
     console.log("Final Price:", finalPrice);
-} 
+}
 
-//------------------------------ 
 
+// ---------------- 3. Scholarship ----------------
 let gpa = Number(prompt("Enter GPA:"));
-let activities = Number(prompt("Enter number of extracurricular activities:"));
-let serviceHours = Number(prompt("Enter community service hours:"));
+let activities = Number(prompt("Enter activities:"));
+let serviceHours = Number(prompt("Enter service hours:"));
 
-if (gpa < 0 || gpa > 4 || isNaN(gpa) ||
-    activities < 0 || isNaN(activities) ||
-    serviceHours < 0 || isNaN(serviceHours)) {
+if (gpa < 0 || gpa > 4 || isNaN(gpa)) {
+    console.log("Invalid input");
+} 
+else {
+    let found = false;
 
-    console.log("Invalid input. Please enter valid values.");
-}  
+    if (gpa >= 3.5) {
+        console.log("Merit-Based Scholarship");
+        found = true;
+    }
 
-else{
-    let scholarships = []; 
-    if(gpa>=3.5){
-        scholarships.push("Merit-Based Scholarship");
-    } 
-
-    if(gpa>=3.0 && activities>=2){
-        scholarships.push("Leadership Scholarship");
-    } 
+    if (gpa >= 3.0 && activities >= 2) {
+        console.log("Leadership Scholarship");
+        found = true;
+    }
 
     if (gpa >= 2.5 && serviceHours >= 100) {
-        scholarships.push("Community Service Scholarship");
-    } 
-
-    if(scholarships.length>0){
-        console.log("Eligible Scholarships:");
-        for(let i=0;i<scholarships.length;i++){
-            console.log("-"+scholarships[i]);
-        }
-    } 
-     else {
-        console.log("No scholarships available.");
+        console.log("Community Service Scholarship");
+        found = true;
     }
- 
-} 
 
-//------------------------------- 
+    if (!found) {
+        console.log("No scholarships available");
+    }
+}
 
-// // Inputs
+
+// ---------------- 4. Movie Ticket ----------------
 let day = prompt("Enter day (weekday / weekend):").toLowerCase();
-let age = Number(prompt("Enter age:"));
+let age1 = Number(prompt("Enter age:"));
 
-// Validation
-if (age < 0 || isNaN(age)) {
+if (age1 < 0 || isNaN(age1)) {
     console.log("Invalid age.");
 } 
 else if (day !== "weekday" && day !== "weekend") {
-    console.log("Invalid day. Enter 'weekday' or 'weekend'.");
+    console.log("Invalid day.");
 } 
 else {
-    let price;
+    let price = (day === "weekday") ? 12 : 15;
 
-    // Weekday pricing
-    if (day === "weekday") {
-        price = 12;
-
-        if (age < 12 || age >= 65) {
-            price = price * 0.5; 
-        }
-    } 
-    
-    // Weekend pricing
-    else if (day === "weekend") {
-        price = 15;
-
-        if (age < 12 || age >= 65) {
-            price = price * 0.7; 
-        }
+    if (age1 < 12 || age1 >= 65) {
+        price = (day === "weekday") ? price * 0.5 : price * 0.7;
     }
 
-    console.log("Final Ticket Price: $" + price);
+    console.log("Final Ticket Price:", price);
 }
 
-//-------------------------------- 
 
-// Inputs
-let age = Number(prompt("Enter your age:"));
-let participants = Number(prompt("Enter current number of participants:"));
-let email = prompt("Enter your email:");
+// ---------------- 5. Event Registration ----------------
+let age2 = Number(prompt("Enter age:"));
+let participants = Number(prompt("Enter participants:"));
+let email = prompt("Enter email:");
 
-// Basic email check
-let isValidEmail = email.includes("@") && email.includes(".");
+let validEmail = email.includes("@") && email.includes(".");
 
-// Validation
-if (age < 18) {
-    console.log("Registration failed: You must be at least 18 years old.");
+if (age2 < 18) {
+    console.log("Must be 18+");
 } 
 else if (participants >= 100) {
-    console.log("Registration failed: Event is full.");
+    console.log("Event full");
 } 
-else if (!isValidEmail) {
-    console.log("Registration failed: Invalid email address.");
+else if (!validEmail) {
+    console.log("Invalid email");
 } 
 else {
-    console.log("Registration successful!");
+    console.log("Registration successful");
 }
