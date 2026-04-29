@@ -1,0 +1,150 @@
+let membership = prompt("Enter membership type (Basic / Standard / Premium):");
+
+if (membership === "Basic") {
+    console.log("You have access to free books only.");
+} 
+else if (membership === "Standard") {
+    console.log("You have access to free books and discounted paid books.");
+} 
+else if (membership === "Premium") {
+    console.log("You have access to all books including exclusive content.");
+} 
+else {
+    console.log("Invalid membership type. Please enter Basic, Standard, or Premium.");
+}
+
+
+//-------------------------- 
+
+let membership = prompt("Enter membership (Regular / VIP):").toLowerCase();
+let amount = Number(prompt("Enter purchase amount:"));
+
+// Validation
+if (amount < 0 || isNaN(amount)) {
+    console.log("Invalid purchase amount.");
+} 
+else if (membership !== "regular" && membership !== "vip") {
+    console.log("Invalid membership type.");
+} 
+
+else{
+    let discount=0;
+    if(membership==='regular'){
+        if(amount<100 ) discount=0;
+        else if(amount<=500) discount=5;
+        else discount=10;
+    } 
+
+    else if(membership==='vip'){
+        if(amount<100) discount=10; 
+        else if(amount<=500) discount=15;
+        else discount=20;
+
+    } 
+
+    let finalprice=amount-(amount*discount/100);
+    console.log("Membership:", membership);
+    console.log("Original Amount:", amount);
+    console.log("Discount:", discount + "%");
+    console.log("Final Price:", finalPrice);
+} 
+
+//------------------------------ 
+
+let gpa = Number(prompt("Enter GPA:"));
+let activities = Number(prompt("Enter number of extracurricular activities:"));
+let serviceHours = Number(prompt("Enter community service hours:"));
+
+if (gpa < 0 || gpa > 4 || isNaN(gpa) ||
+    activities < 0 || isNaN(activities) ||
+    serviceHours < 0 || isNaN(serviceHours)) {
+
+    console.log("Invalid input. Please enter valid values.");
+}  
+
+else{
+    let scholarships = []; 
+    if(gpa>=3.5){
+        scholarships.push("Merit-Based Scholarship");
+    } 
+
+    if(gpa>=3.0 && activities>=2){
+        scholarships.push("Leadership Scholarship");
+    } 
+
+    if (gpa >= 2.5 && serviceHours >= 100) {
+        scholarships.push("Community Service Scholarship");
+    } 
+
+    if(scholarships.length>0){
+        console.log("Eligible Scholarships:");
+        for(let i=0;i<scholarships.length;i++){
+            console.log("-"+scholarships[i]);
+        }
+    } 
+     else {
+        console.log("No scholarships available.");
+    }
+ 
+} 
+
+//------------------------------- 
+
+// // Inputs
+let day = prompt("Enter day (weekday / weekend):").toLowerCase();
+let age = Number(prompt("Enter age:"));
+
+// Validation
+if (age < 0 || isNaN(age)) {
+    console.log("Invalid age.");
+} 
+else if (day !== "weekday" && day !== "weekend") {
+    console.log("Invalid day. Enter 'weekday' or 'weekend'.");
+} 
+else {
+    let price;
+
+    // Weekday pricing
+    if (day === "weekday") {
+        price = 12;
+
+        if (age < 12 || age >= 65) {
+            price = price * 0.5; 
+        }
+    } 
+    
+    // Weekend pricing
+    else if (day === "weekend") {
+        price = 15;
+
+        if (age < 12 || age >= 65) {
+            price = price * 0.7; 
+        }
+    }
+
+    console.log("Final Ticket Price: $" + price);
+}
+
+//-------------------------------- 
+
+// Inputs
+let age = Number(prompt("Enter your age:"));
+let participants = Number(prompt("Enter current number of participants:"));
+let email = prompt("Enter your email:");
+
+// Basic email check
+let isValidEmail = email.includes("@") && email.includes(".");
+
+// Validation
+if (age < 18) {
+    console.log("Registration failed: You must be at least 18 years old.");
+} 
+else if (participants >= 100) {
+    console.log("Registration failed: Event is full.");
+} 
+else if (!isValidEmail) {
+    console.log("Registration failed: Invalid email address.");
+} 
+else {
+    console.log("Registration successful!");
+}
