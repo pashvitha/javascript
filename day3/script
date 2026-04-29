@@ -1,50 +1,63 @@
-let a=10;
-let b="10";
+// 1. Comparison Operators
+let a = 10;
+let b = "10";
 
-console.log("a=",a, "|b=",b);
-console.log("a==b: ",a==b);
-console.log("a===b:",a===b);
-console.log("a!=b:",a!=b);
-console.log("a!==b:",a!==b);
-console.log("a>b:",a>b);
-console.log("a<b:",a<b);
-console.log("a>=b:",a>=b);
-console.log("a<=b:",a<=b);
+console.log("a =", a, "| b =", b);
+console.log("a == b:", a == b);
+console.log("a === b:", a === b);
+console.log("a != b:", a != b);
+console.log("a !== b:", a !== b);
+console.log("a > b:", a > b);
+console.log("a < b:", a < b);
+console.log("a >= b:", a >= b);
+console.log("a <= b:", a <= b);
 
 
+// 2. Even or Odd using ternary
 let num = Number(prompt("Enter a number:"));
-let res = (num % 2 === 0) ? "even" : "odd";
+let res = (num % 2 === 0) ? "Even" : "Odd";
+
 console.log("Number:", num);
 console.log("Result:", res);
 
-let age = Number(prompt("Enter age:"));
-let status = (age >= 18) ? "adult" : "minor";
-console.log("Age:", age);
+
+// 3. Adult or Minor
+let age1 = Number(prompt("Enter age:"));
+let status = (age1 >= 18) ? "Adult" : "Minor";
+
+console.log("Age:", age1);
 console.log("Status:", status);
 
+
+// 4. Grade Classification
 let score = 82;
-let grade=(score>=90)?'A':
-            (score>=75)?'B':
+
+let grade = (score >= 90) ? "A" :
+            (score >= 75) ? "B" :
             (score >= 60) ? "C" :
             (score >= 45) ? "D" : "F";
 
 console.log("Score:", score);
 console.log("Grade:", grade);
 
+
+// 5. Temperature Check
 let temperature = 25;
 
-let result = (temperature > 30) ? "Hot" :
-             (temperature >= 20) ? "Warm" :
-             (temperature >= 10) ? "Cool" : "Cold";
+let tempResult = (temperature > 30) ? "Hot" :
+                 (temperature >= 20) ? "Warm" :
+                 (temperature >= 10) ? "Cool" : "Cold";
 
 console.log("Temperature:", temperature);
-console.log("Category:", result);
+console.log("Category:", tempResult);
 
-let age = 25;
 
-let group = (age <= 12) ? "Child" :
-            (age <= 19) ? "Teen" :
-            (age <= 64) ? "Adult" : "Senior";
+// 6. Age Group Classification
+let age2 = 25;
 
-console.log("Age:", age);
+let group = (age2 <= 12) ? "Child" :
+            (age2 <= 19) ? "Teen" :
+            (age2 <= 64) ? "Adult" : "Senior";
+
+console.log("Age:", age2);
 console.log("Group:", group);
