@@ -1,3 +1,4 @@
+
 // 1. Function to return sum of two numbers
 function sum(a, b) {
     return a + b;
@@ -7,40 +8,44 @@ console.log("Sum:", sum(5, 3));
 
 // 2. Function to print string in uppercase
 function printUpperCase(str) {
-    console.log("Uppercase:", str.toUpperCase());
+    console.log(str.toUpperCase());
 }
 printUpperCase("hello");
 
 
-// 3. Passing undefined to a function
-function showValue(value) {
-    console.log("Value passed:", value);
+// 3. What happens if undefined is passed
+function checkUndefined(value) {
+    if (value === undefined) {
+        console.log("Value is undefined");
+    } else {
+        console.log("Value:", value);
+    }
 }
-showValue(undefined); // undefined
+checkUndefined(undefined);
 
 
 // 4. Function to check if array is empty
-function checkArray(arr) {
+function isArrayEmpty(arr) {
     if (arr.length === 0) {
-        console.log("Array is empty");
+        return true;
     } else {
-        console.log("Array is not empty");
+        return false;
     }
 }
-checkArray([]);
-checkArray([10, 20]);
+console.log("Is array empty?", isArrayEmpty([]));
+console.log("Is array empty?", isArrayEmpty([1, 2]));
 
 
-// 5. Function to return difference of two numbers
+// 5. Function to return difference
 function difference(a, b) {
     return a - b;
 }
 console.log("Difference:", difference(10, 4));
 
 
-// 6. Function for greeting with name and age
+// 6. Greeting function
 function greet(name, age) {
-    return `Hello, ${name}! You are ${age} years old.`;
+    return "Hello, " + name + "! You are " + age + " years old.";
 }
 console.log(greet("Pashvitha", 21));
 
@@ -49,5 +54,5 @@ console.log(greet("Pashvitha", 21));
 function isEven(num) {
     return num % 2 === 0;
 }
-console.log("Is 4 even?", isEven(4));
-console.log("Is 7 even?", isEven(7));
+console.log("4 is even?", isEven(4));
+console.log("7 is even?", isEven(7));
