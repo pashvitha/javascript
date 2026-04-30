@@ -1,0 +1,54 @@
+
+// 1. Sum of two numbers
+function sum(a, b) {
+    return a + b;
+}
+console.log("Sum:", sum(5, 3)); 
+
+
+// 2. Print string in uppercase
+function printUpperCase(str) {
+    console.log("Uppercase:", str.toUpperCase());
+}
+printUpperCase("hello"); 
+
+
+// 3. Passing undefined
+function show(value) {
+    console.log("Value:", value);
+}
+show(undefined); 
+
+
+// 4. Check if array is empty
+function checkArray(arr) {
+    if (arr.length === 0) {
+        console.log("Array is empty");
+    } else {
+        console.log("Array is not empty");
+    }
+}
+checkArray([]);
+checkArray([1, 2, 3]);
+
+
+// 5. Difference of two numbers
+function difference(a, b) {
+    return a - b;
+}
+console.log("Difference:", difference(10, 4)); 
+
+
+// 6. Greeting function
+function greet(name, age) {
+    return `Hello, ${name}! You are ${age} years old.`;
+}
+console.log(greet("John", 22));
+
+
+// 7. Check even number
+function isEven(num) {
+    return num % 2 === 0;
+}
+console.log("Is 4 even?", isEven(4)); // true
+console.log("Is 7 even?", isEven(7)); // false
