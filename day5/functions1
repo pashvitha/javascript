@@ -1,0 +1,49 @@
+// 1. Sum of two numbers
+function sum(a, b) {
+    return a + b;
+}
+console.log(sum(5, 3));
+
+
+// 2. Print string in uppercase
+function toUpper(str) {
+    console.log(str.toUpperCase());
+}
+toUpper("hello");
+
+
+// 3. Passing undefined
+function checkValue(value) {
+    console.log(value);
+}
+checkValue(undefined);
+
+
+// 4. Check if array is empty
+function checkArray(arr) {
+    return arr.length === 0;
+}
+console.log(checkArray([]));
+console.log(checkArray([1, 2, 3]));
+
+
+// 5. Difference of two numbers
+function diff(a, b) {
+    return a - b;
+}
+console.log(diff(10, 5));
+
+
+// 6. Greeting function
+function greeting(name, age) {
+    return `Hello, ${name}! You are ${age} years old.`;
+}
+console.log(greeting("Pashvitha", 21));
+
+
+// 7. Check even number
+function evenCheck(num) {
+    return num % 2 === 0;
+}
+console.log(evenCheck(4));
+console.log(evenCheck(9));
